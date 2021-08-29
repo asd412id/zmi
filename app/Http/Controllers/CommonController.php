@@ -134,7 +134,11 @@ class CommonController extends BaseController
 		$configs = Config::configs();
 		$data = [
 			'title' => env('APP_NAME') . ' | ' . (@$configs->lembaga ?? 'UPTD SMP NEGERI 39 SINJAI'),
-			'category' => Category::where('active', 1)->whereHas('links')->get(),
+			'category' => Category::where('active', 1)
+				->whereHas('links')
+				->orderBy('position', 'asc')
+				->orderBy('name', 'asc')
+				->get(),
 			'ulinks' => Link::whereNull('category_id')
 				->orderBy('position', 'asc')
 				->orderBy('name', 'asc')
