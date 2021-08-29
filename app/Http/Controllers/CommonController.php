@@ -137,11 +137,11 @@ class CommonController extends BaseController
 			'category' => Category::where('active', 1)
 				->whereHas('links')
 				->orderBy('position', 'asc')
-				->orderBy('name', 'asc')
+				->orderBy('created_at', 'asc')
 				->get(),
 			'ulinks' => Link::whereNull('category_id')
 				->orderBy('position', 'asc')
-				->orderBy('name', 'asc')
+				->orderBy('created_at', 'asc')
 				->get(),
 			'configs' => $configs
 		];

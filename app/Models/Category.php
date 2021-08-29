@@ -14,7 +14,7 @@ class Category extends Model
 	{
 		return $this->hasMany(Link::class)
 			->orderBy('position', 'asc')
-			->orderBy('name', 'asc');
+			->orderBy('created_at', 'asc');
 	}
 
 	public function getActiveAttribute($value)
