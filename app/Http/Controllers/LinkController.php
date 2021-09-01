@@ -16,6 +16,8 @@ use DataTables;
 class LinkController extends Controller
 {
 	use AuthorizesRequests, ValidatesRequests;
+
+	protected $forbidden_link = ['login', 'logout', 'home', 'category', 'link', 'account', 'configs', 'store'];
 	public function index()
 	{
 		if (request()->ajax()) {
@@ -149,7 +151,7 @@ class LinkController extends Controller
 
 		$cek = Link::where('link', Str::titleSlug($r->link))->count();
 
-		if ($cek || Str::titleSlug($r->link) == 'login') {
+		if ($cek || in_array(Str::titleSlug($r->link), $this->forbidden_link)) {
 			return response()->json(['message' => 'Url telah digunakan!'], 406);
 		}
 
@@ -189,7 +191,7 @@ class LinkController extends Controller
 			->where('uuid', '!=', $uuid)
 			->count();
 
-		if ($cek || Str::titleSlug($r->link) == 'login') {
+		if ($cek || in_array(Str::titleSlug($r->link), $this->forbidden_link)) {
 			return response()->json(['message' => 'Url telah digunakan!'], 406);
 		}
 
