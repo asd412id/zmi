@@ -141,7 +141,7 @@ class LinkController extends Controller
 			'destination' => 'required',
 		], [
 			'name.required' => 'Nama link tidak boleh kosong!',
-			'link.required' => 'url tidak boleh kosong!',
+			'link.required' => 'URL tidak boleh kosong!',
 			'destination.required' => 'Link tujuan tidak boleh kosong!',
 		]);
 
