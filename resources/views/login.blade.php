@@ -10,12 +10,14 @@
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
+  @laravelPWA
 </head>
 
 <body class="hold-transition login-page dark-mode">
   <div class="login-box">
     <div class="login-logo">
-      <a href="{{ route('login') }}">Login <b>Administrator</b></a> </div>
+      <a href="{{ route('login') }}">Login <b>Administrator</b></a>
+    </div>
     <div class="card">
       <div class="card-body login-card-body">
         @if ($errors->any())
