@@ -163,4 +163,9 @@ $(function () {
       loadFormModal(table, $(this).attr('href'));
     });
   }
+  if ($("#link-dest").length > 0) {
+    setTimeout(() => {
+      location.href = $("#link-dest").attr("href").trim();
+    }, 3000);
+  }
 });

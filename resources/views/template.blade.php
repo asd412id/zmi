@@ -14,17 +14,17 @@
 </head>
 
 <body class="blue-gradient">
-  <header class="col-md-8 offset-md-2 d-flex justify-content-between py-3 px-2">
+  <header class="col-md-8 offset-md-2 d-flex py-3 px-2">
     <div class="d-flex col-2 logo-wrapper">
       <img class="d-flex logo" src="{{ asset('img/logo_pemda.png') }}" alt="Logo Pemda">
     </div>
-    <div class="d-flex flex-column col-md-8 title">
+    <div class="d-flex flex-column col-md-8 title pt-2">
       <h1>{{ strtoupper(env('APP_NAME')) }}</h1>
       <h2>{{ strtoupper(@$configs->lembaga)??'UPTD SMP NEGERI 39 SINJAI' }}</h2>
     </div>
-    <div class="d-flex col-2 logo-wrapper">
+    {{-- <div class="d-flex col-2 logo-wrapper">
       <img class="d-flex logo" src="{{ asset('img/logo_sekolah.png') }}" alt="Logo Sekolah">
-    </div>
+    </div> --}}
   </header>
 
   <div id="wrapper">
@@ -97,6 +97,8 @@
       </div>
     </div>
   </footer>
+  <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 
 </html>
