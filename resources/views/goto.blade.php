@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid link-wrapper">
   @if ($link)
-  <div class="cat">{{ $link->name }}</div>
+  <div class="cat" style="background-color: {{ @$link->color }}">{{ $link->name }}</div>
   <div class="container-fluid">
     <h4 class="p-2 text-center">{{ $link->description }}</h4>
     @if ($link->active_val)
