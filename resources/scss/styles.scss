@@ -146,6 +146,10 @@ footer{
     text-shadow: 1px 5px 5px rgba($shadow,.5);
     text-align: center;
     text-transform: uppercase;
+    cursor: pointer;
+    @include hover{
+      filter: brightness(0.95);
+    }
   }
   .link{
     @include make-col(12/5);
@@ -156,6 +160,12 @@ footer{
     text-align: center;
     clear: both;
     padding: 10px;
+    display: none;
+    &.show{
+      display: block;
+      animation: fadeIn 500ms;
+      -webkit-animation: fadeIn 500ms;
+    }
     a{
       color: #fff;
       background: linear-gradient(to bottom,rgba(#fff,.3) 100%,rgba(#fff,1) 100%,rgba(#fff,.3) 90%);

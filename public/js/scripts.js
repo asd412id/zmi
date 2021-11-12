@@ -63,6 +63,12 @@ var loadFormModal = (table, url) => {
         }
       });
     });
+    if ($(".cpicker").length > 0) {
+      $(".cpicker").colorpicker();
+      $('.cpicker').on('colorpickerChange', function (event) {
+        $('.cpicker .fa-square').css('color', event.color.toString());
+      })
+    }
   }, 'json');
 }
 var destroyData = (table, url) => {
@@ -167,5 +173,12 @@ $(function () {
     setTimeout(() => {
       location.href = $("#link-dest").attr("href").trim();
     }, 3000);
+  }
+  if ($("#content").find(".cat").length > 0) {
+    $("#content").find(".cat").each(function () {
+      $(this).off().on("click", function () {
+        $(this).parent().find(".link").toggleClass("show");
+      });
+    });
   }
 });

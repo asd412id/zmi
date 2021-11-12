@@ -26,4 +26,9 @@ class Category extends Model
 	{
 		return $this->attributes['active'];
 	}
+
+	public function getColorAttribute()
+	{
+		return @Config::where('config', 'cat_' . $this->id . '_color')->first()->value;
+	}
 }

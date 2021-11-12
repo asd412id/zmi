@@ -10,7 +10,7 @@
       tidak
       diarahkan ke halaman tujuan!</h2>
       <div class="row">
-        <div class="link">
+        <div class="link show">
           <a class="d-block" id="link-dest" title="Buka Link" target="_blank" href="{{ $link->destination }}">Buka
             Halaman</a>
           <a class="d-block mt-2" title="Homepage" href="{{ route('homepage') }}">Kembali ke Halaman Utama</a>
@@ -19,7 +19,7 @@
       @else
       <h3 class="pt-3 pb-3 text-center">Ops, halaman saat ini tidak tersedia!</h2>
         <div class="row">
-          <div class="link">
+          <div class="link show">
             <a class="d-block" title="Homepage" href="{{ route('homepage') }}">Kembali ke Halaman Utama</a>
           </div>
         </div>
@@ -29,7 +29,7 @@
   <div class="container-fluid">
     <h3 class="pt-3 pb-3 text-center">Ops, halaman yang Anda cari tidak ditemukan!</h2>
       <div class="row">
-        <div class="link">
+        <div class="link show">
           <a class="d-block" title="Homepage" href="{{ route('homepage') }}">Kembali ke Halaman Utama</a>
         </div>
       </div>

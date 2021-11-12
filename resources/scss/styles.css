@@ -4,6 +4,7 @@ html, body {
 
 body.blue-gradient {
   font-family: Arial, Helvetica, sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5cc9e6), to(#0d6094));
   background: linear-gradient(#5cc9e6, #0d6094);
   background-attachment: fixed;
   color: #fff;
@@ -13,11 +14,13 @@ body.blue-gradient {
   height: 100px;
   margin: 0 auto;
 }
+
 @media (max-width: 767.98px) {
   .logo-wrapper .logo {
     height: 75px;
   }
 }
+
 @media (max-width: 767.98px) {
   .logo-wrapper {
     display: none !important;
@@ -28,17 +31,20 @@ body.blue-gradient {
   text-align: center !important;
   text-shadow: 1px 2px 5px #4d4d4d;
 }
+
 .title h1 {
-  font-family: "Bookman Old Style";
+  font-family: 'Bookman Old Style';
   font-weight: bold;
   font-size: 1.9rem;
   width: 100%;
 }
+
 .title h2 {
-  font-family: "Bookman Old Style";
+  font-family: 'Bookman Old Style';
   font-weight: bold;
   font-size: 2.2rem;
 }
+
 @media (max-width: 767.98px) {
   .title h1 {
     font-size: 1.3rem;
@@ -65,9 +71,12 @@ footer {
   text-decoration: none;
   border-radius: 15px;
   font-weight: bold;
-  box-shadow: 2px 3px 5px #4d4d4d;
+  -webkit-box-shadow: 2px 3px 5px #4d4d4d;
+          box-shadow: 2px 3px 5px #4d4d4d;
+  -webkit-transition: 200ms all ease-out;
   transition: 200ms all ease-out;
 }
+
 .box-footer:hover, .box-footer:active {
   color: #0d6094;
 }
@@ -86,28 +95,36 @@ footer {
   text-decoration: none;
   border-radius: 15px;
   font-weight: bold;
-  box-shadow: 2px 3px 5px #4d4d4d;
+  -webkit-box-shadow: 2px 3px 5px #4d4d4d;
+          box-shadow: 2px 3px 5px #4d4d4d;
 }
+
 .box-medsos h4 {
   text-decoration: underline;
   margin-bottom: 10px;
   text-shadow: 1px 2px 5px #4d4d4d;
 }
+
 .box-medsos .icon {
   padding: 5px;
   display: inline-block;
 }
+
 .box-medsos .icon img {
+  -webkit-transition: 250ms all ease-out;
   transition: 250ms all ease-out;
   width: 40px;
 }
+
 @media (max-width: 767.98px) {
   .box-medsos .icon img {
     width: 30px;
   }
 }
+
 .box-medsos .icon:hover img, .box-medsos .icon:active img {
-  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 #wrapper {
@@ -120,26 +137,35 @@ footer {
   width: 100%;
   padding-bottom: 190px;
 }
+
 #content .link-wrapper {
   padding: 10px 15px;
 }
+
 #content .cat {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(165, 173, 176, 0.5)), color-stop(100%, white), to(rgba(165, 173, 176, 0.5)));
   background: linear-gradient(to bottom, rgba(165, 173, 176, 0.5) 100%, white 100%, rgba(165, 173, 176, 0.5) 100%);
   padding: 5px 15px;
   font-size: 1.5rem;
   border-radius: 7px;
   font-weight: bold;
-  box-shadow: 1px 3px 5px rgba(77, 77, 77, 0.3);
+  -webkit-box-shadow: 1px 3px 5px rgba(77, 77, 77, 0.3);
+          box-shadow: 1px 3px 5px rgba(77, 77, 77, 0.3);
   text-shadow: 1px 5px 5px rgba(77, 77, 77, 0.5);
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
 }
+
 #content .cat:hover, #content .cat:active {
-  filter: brightness(0.95);
+  -webkit-filter: brightness(0.95);
+          filter: brightness(0.95);
 }
+
 #content .link {
-  flex: 0 0 20%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
   max-width: 20%;
   margin: 0 auto;
   text-align: center;
@@ -147,27 +173,37 @@ footer {
   padding: 10px;
   display: none;
 }
+
 @media (max-width: 767.98px) {
   #content .link {
-    flex: 0 0 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
     max-width: 100%;
   }
 }
+
 #content .link.show {
   display: block;
   animation: fadeIn 500ms;
   -webkit-animation: fadeIn 500ms;
 }
+
 #content .link a {
   color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(255, 255, 255, 0.3)), color-stop(100%, white), color-stop(90%, rgba(255, 255, 255, 0.3)));
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 100%, white 100%, rgba(255, 255, 255, 0.3) 90%);
   padding: 5px 15px;
   font-size: 1.4rem;
   border-radius: 7px;
-  box-shadow: 1px 3px 5px rgba(77, 77, 77, 0.3);
+  -webkit-box-shadow: 1px 3px 5px rgba(77, 77, 77, 0.3);
+          box-shadow: 1px 3px 5px rgba(77, 77, 77, 0.3);
   text-shadow: 1px 5px 5px rgba(77, 77, 77, 0.5);
+  -webkit-transition: 200ms all ease-out;
   transition: 200ms all ease-out;
 }
+
 #content .link a:hover, #content .link a:active {
   color: #0d6094;
 }
+/*# sourceMappingURL=styles.css.map */

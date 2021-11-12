@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Config;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -72,6 +73,15 @@ class CategoryController extends Controller
 					</select>
 				</div>
 				<div class="form-group">
+					<label>Warna</label>
+					<div class="input-group cpicker">
+						<input type="text" class="form-control" name="color" value="<?php echo @$cat->color ?>">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-square" style="color: <?= @$cat->color ?? '#fff' ?>;"></i></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
 					<label for="istatus">Status</label>
 					<select name="active" class="form-control">
 						<option <?= !is_null(@$cat->active_val) && @$cat->active_val == 1 ? 'selected' : '' ?> value="1">Aktif</option>
@@ -108,6 +118,10 @@ class CategoryController extends Controller
 		$insert->active = $r->active;
 
 		if ($insert->save()) {
+			$color = new Config;
+			$color->config = 'cat_' . $insert->id . '_color';
+			$color->value = $r->color;
+			$color->save();
 			return response()->json(['message' => 'Data berhasil disimpan']);
 		}
 		return response()->json(['message' => 'Data gagal disimpan!'], 500);
@@ -127,6 +141,13 @@ class CategoryController extends Controller
 		$insert->active = $r->active;
 
 		if ($insert->save()) {
+			$color = Config::where('config', 'cat_' . $insert->id . '_color')->first();
+			if (!$color) {
+				$color = new Config;
+			}
+			$color->config = 'cat_' . $insert->id . '_color';
+			$color->value = $r->color;
+			$color->save();
 			return response()->json(['message' => 'Data berhasil disimpan']);
 		}
 		return response()->json(['message' => 'Data gagal disimpan!'], 500);
@@ -135,6 +156,8 @@ class CategoryController extends Controller
 	{
 		$delete = Category::where('uuid', $uuid)->first();
 		if ($delete->delete()) {
+			$color = Config::where('config', 'cat_' . $delete->id . '_color')->first();
+			$color->delete();
 			return response()->json(['message' => 'Data berhasil dihapus']);
 		}
 		return response()->json(['message' => 'Data gagal dihapus'], 500);

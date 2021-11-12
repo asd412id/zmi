@@ -30,4 +30,8 @@ class Link extends Model
 	{
 		return $this->attributes['link'];
 	}
+	public function getColorAttribute()
+	{
+		return @Config::where('config', 'link_' . $this->id . '_color')->first()->value;
+	}
 }
